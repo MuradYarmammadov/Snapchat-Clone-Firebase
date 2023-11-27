@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ResetPasswordViewController: UIViewController {
 
@@ -19,7 +20,7 @@ class ResetPasswordViewController: UIViewController {
         setUI()
     }
     
-    func setUI(){
+   private func setUI(){
         loginLabel.isUserInteractionEnabled = true
         let loginGesture = UITapGestureRecognizer(target: self, action: #selector(loginTapped))
         loginLabel.addGestureRecognizer(loginGesture)
@@ -30,6 +31,13 @@ class ResetPasswordViewController: UIViewController {
     }
 
     @IBAction func sendButtonAction(_ sender: UIButton) {
+        if emailTextField.text != "" {
+            if let email = emailTextField.text{
+                Auth.auth().sendPasswordReset(withEmail: email)
+            }
+        } else {
+            makeAlert(title: "Error", message: "Email is required")
+        }
     }
     
     @objc func loginTapped(){
@@ -38,6 +46,13 @@ class ResetPasswordViewController: UIViewController {
     
     @objc func signUpTapped() {
         performSegue(withIdentifier: "resetToRegister", sender: nil)
+    }
+    
+    func makeAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: handler)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
     }
 
 }

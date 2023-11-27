@@ -26,17 +26,16 @@ class RegisterViewController: UIViewController {
         setUI()
     }
     
-    func setUI(){
+    private func setUI(){
         loginLabel.isUserInteractionEnabled = true
         let loginGesture = UITapGestureRecognizer(target: self, action: #selector(loginTapped))
         loginLabel.addGestureRecognizer(loginGesture)
     }
     
     @IBAction func registerButtonAction(_ sender: Any) {
-        
-        if nameTextField.text != "" ||
-            emailTextField.text != "" ||
-            passwordTextField.text != "" ||
+        if nameTextField.text != "" &&
+            emailTextField.text != "" &&
+            passwordTextField.text != "" &&
             confirmPasswordTextField.text != "" {
             if passwordTextField.text == confirmPasswordTextField.text {
                 if let name = nameTextField.text,
@@ -63,7 +62,7 @@ class RegisterViewController: UIViewController {
     func createUser(email: String, password: String, name: String){
         Auth.auth().createUser(withEmail: email, password: password) { auth, error in
             if let error = error {
-                self.makeAlert(title: "Errro", message: error.localizedDescription)
+                self.makeAlert(title: "Error", message: error.localizedDescription)
             } else {
                 let firestore = Firestore.firestore()
                 let userDictionary = ["email" : email, "name": name] as [String : Any]

@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
         setUI()
     }
     
-    func setUI(){
+   private func setUI(){
         createNewAccountLabel.isUserInteractionEnabled = true
         let createAccountGesture = UITapGestureRecognizer(target: self, action: #selector(createAccountTapped))
         createNewAccountLabel.addGestureRecognizer(createAccountGesture)
@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginButtonAction(_ sender: UIButton) {
-        if emailTextField.text != "" ||
+        if emailTextField.text != "" &&
             passwordTextField.text != "" {
             if let email = emailTextField.text,
                let password = passwordTextField.text {
