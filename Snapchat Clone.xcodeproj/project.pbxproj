@@ -10,6 +10,9 @@
 		C8E06E0A87B1E2F6D5CCA7B3 /* Pods_Snapchat_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D0852479DA7DC0ECC9853B /* Pods_Snapchat_Clone.framework */; };
 		FA703C082B11422400659E04 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703C072B11422400659E04 /* SnapViewController.swift */; };
 		FA703C0C2B1155CC00659E04 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703C0B2B1155CC00659E04 /* UserSingleton.swift */; };
+		FA703C0E2B162F8900659E04 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703C0D2B162F8900659E04 /* FeedCell.swift */; };
+		FA703C102B16330400659E04 /* SnapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703C0F2B16330400659E04 /* SnapModel.swift */; };
+		FA703C132B1A78D700659E04 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703C122B1A78D700659E04 /* AlertExtension.swift */; };
 		FA7A73BB2B110234007A5FA5 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7A73BA2B110234007A5FA5 /* ResetPasswordViewController.swift */; };
 		FAA09C662B1107AF0006129D /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09C652B1107AF0006129D /* UploadViewController.swift */; };
 		FAA09C682B1107B70006129D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA09C672B1107B70006129D /* SettingsViewController.swift */; };
@@ -30,6 +33,9 @@
 		C4D0852479DA7DC0ECC9853B /* Pods_Snapchat_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapchat_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA703C072B11422400659E04 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		FA703C0B2B1155CC00659E04 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
+		FA703C0D2B162F8900659E04 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		FA703C0F2B16330400659E04 /* SnapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapModel.swift; sourceTree = "<group>"; };
+		FA703C122B1A78D700659E04 /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
 		FA7A73BA2B110234007A5FA5 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		FAA09C652B1107AF0006129D /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		FAA09C672B1107B70006129D /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -79,8 +85,17 @@
 			isa = PBXGroup;
 			children = (
 				FA703C0B2B1155CC00659E04 /* UserSingleton.swift */,
+				FA703C0F2B16330400659E04 /* SnapModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FA703C112B1A78AC00659E04 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA703C122B1A78D700659E04 /* AlertExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FAA09C692B1107DE0006129D /* ViewControllers */ = {
@@ -107,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA09C6D2B110ABB0006129D /* FeedViewController.swift */,
+				FA703C0D2B162F8900659E04 /* FeedCell.swift */,
 				FAA09C652B1107AF0006129D /* UploadViewController.swift */,
 				FAA09C672B1107B70006129D /* SettingsViewController.swift */,
 				FA703C072B11422400659E04 /* SnapViewController.swift */,
@@ -144,6 +160,7 @@
 		FAD3B2C52B10D197003FCCEE /* Snapchat Clone */ = {
 			isa = PBXGroup;
 			children = (
+				FA703C112B1A78AC00659E04 /* Extensions */,
 				FA703C0A2B1155AB00659E04 /* Model */,
 				FAA09C6C2B1108430006129D /* Delegates */,
 				FAA09C692B1107DE0006129D /* ViewControllers */,
@@ -280,10 +297,13 @@
 				FAA09C662B1107AF0006129D /* UploadViewController.swift in Sources */,
 				FAD3B2C72B10D197003FCCEE /* AppDelegate.swift in Sources */,
 				FA703C082B11422400659E04 /* SnapViewController.swift in Sources */,
+				FA703C0E2B162F8900659E04 /* FeedCell.swift in Sources */,
 				FA7A73BB2B110234007A5FA5 /* ResetPasswordViewController.swift in Sources */,
 				FAD3B2C92B10D197003FCCEE /* SceneDelegate.swift in Sources */,
+				FA703C132B1A78D700659E04 /* AlertExtension.swift in Sources */,
 				FAD3B2F32B10F34D003FCCEE /* RegisterViewController.swift in Sources */,
 				FAA09C6E2B110ABB0006129D /* FeedViewController.swift in Sources */,
+				FA703C102B16330400659E04 /* SnapModel.swift in Sources */,
 				FA703C0C2B1155CC00659E04 /* UserSingleton.swift in Sources */,
 				FAA09C682B1107B70006129D /* SettingsViewController.swift in Sources */,
 			);

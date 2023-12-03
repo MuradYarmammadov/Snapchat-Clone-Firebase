@@ -47,12 +47,5 @@ class ResetPasswordViewController: UIViewController {
     @objc func signUpTapped() {
         performSegue(withIdentifier: "resetToRegister", sender: nil)
     }
-    
-    func makeAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: handler)
-        alert.addAction(okButton)
-        self.present(alert, animated: true, completion: nil)
-    }
 
 }

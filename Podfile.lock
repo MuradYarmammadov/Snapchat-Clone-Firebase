@@ -802,6 +802,9 @@ PODS:
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.3.1)
   - RecaptchaInterop (100.0.0)
+  - SDWebImage (5.18.5):
+    - SDWebImage/Core (= 5.18.5)
+  - SDWebImage/Core (5.18.5)
 
 DEPENDENCIES:
   - FirebaseAnalytics
@@ -809,6 +812,7 @@ DEPENDENCIES:
   - FirebaseCore
   - FirebaseFirestore
   - FirebaseStorage
+  - SDWebImage
 
 SPEC REPOS:
   trunk:
@@ -833,6 +837,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - RecaptchaInterop
+    - SDWebImage
 
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
@@ -856,7 +861,8 @@ SPEC CHECKSUMS:
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   RecaptchaInterop: 7d1a4a01a6b2cb1610a47ef3f85f0c411434cb21
+  SDWebImage: 7ac2b7ddc5e8484c79aa90fc4e30b149d6a2c88f
 
-PODFILE CHECKSUM: b4ceb009bd3e3b41a039c4ca1985d54593c6167d
+PODFILE CHECKSUM: 7b5b00738a20956c805b0355eb4a8c724ce2435f
 
 COCOAPODS: 1.13.0

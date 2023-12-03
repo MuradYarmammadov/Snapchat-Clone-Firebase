@@ -38,21 +38,17 @@ class RegisterViewController: UIViewController {
             passwordTextField.text != "" &&
             confirmPasswordTextField.text != "" {
             if passwordTextField.text == confirmPasswordTextField.text {
-                if let name = nameTextField.text,
-                   let email = emailTextField.text,
-                   let password = passwordTextField.text
-                {
-                    createUser(email: email, password: password, name: name)
+                if let email = emailTextField.text,
+                   let name = nameTextField.text,
+                   let password = passwordTextField.text {
+                    self.createUser(email: email, password: password, name: name)
                 }
+            } else {
+                self.makeAlert(title: "Error", message: "Passwords not matched")
             }
-            else {
-                makeAlert(title: "Error", message: "Paswords don't match")
-            }
+        } else {
+            self.makeAlert(title: "Error", message: "Enter all information")
         }
-        else {
-            makeAlert(title: "Error", message: "You should enter all information")
-        }
-        
     }
     
     @objc func loginTapped(){
@@ -64,26 +60,20 @@ class RegisterViewController: UIViewController {
             if let error = error {
                 self.makeAlert(title: "Error", message: error.localizedDescription)
             } else {
-                let firestore = Firestore.firestore()
-                let userDictionary = ["email" : email, "name": name] as [String : Any]
-                firestore.collection("UserInfo").addDocument(data: userDictionary) { error in
+                let fireStore = Firestore.firestore()
+                let userDictionary = ["Email": email, "Name": name] as [String: Any]
+                fireStore.collection("UserInfo").addDocument(data: userDictionary) { error in
                     if let error = error {
                         self.makeAlert(title: "Error", message: error.localizedDescription)
                     } else {
-                        self.makeAlert(title: "Success", message: "Account registered successfully") { _ in
+                        self.makeAlert(title: "Success", message: "Account was created successfully") { _ in
                             self.performSegue(withIdentifier: "registerToLogin", sender: nil)
                         }
                     }
                 }
-                
             }
         }
+        
     }
-    
-    func makeAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)? = nil) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        let okButton = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: handler)
-        alert.addAction(okButton)
-        self.present(alert, animated: true, completion: nil)
-    }
+
 }

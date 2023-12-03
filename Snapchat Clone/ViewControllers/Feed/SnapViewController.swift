@@ -10,12 +10,14 @@ import UIKit
 class SnapViewController: UIViewController {
 
     @IBOutlet weak var timeLabel: UILabel!
+    var selectedSnap : Snap?
+    var timeLeft: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if let time = timeLeft {
+            timeLabel.text = "Time Left: \(time)"
+        }
     }
-    
-
 
 }

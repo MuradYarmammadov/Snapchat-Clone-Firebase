@@ -361,8 +361,56 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Csm-NZ-TL0">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="847"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.98823529480000005" green="0.92941176889999999" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" red="0.98823529480000005" green="0.92941176889999999" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="325" id="Tlk-cQ-ocj" customClass="FeedCell" customModule="Snapchat_Clone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="325"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tlk-cQ-ocj" id="1ai-ur-ZHi">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="325"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scu-uY-cif">
+                                                    <rect key="frame" x="20" y="11" width="374" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserEmail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Es-rU-HAA">
+                                                    <rect key="frame" x="20" y="43" width="374" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4ez-Be-aVk">
+                                                    <rect key="frame" x="87" y="61" width="240" height="240"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="240" id="8OG-JO-2ZG"/>
+                                                        <constraint firstAttribute="width" constant="240" id="Xnd-Do-lCI"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="scu-uY-cif" firstAttribute="leading" secondItem="1ai-ur-ZHi" secondAttribute="leadingMargin" id="0Gt-WZ-68U"/>
+                                                <constraint firstItem="2Es-rU-HAA" firstAttribute="leading" secondItem="1ai-ur-ZHi" secondAttribute="leadingMargin" id="9Oj-G1-540"/>
+                                                <constraint firstItem="2Es-rU-HAA" firstAttribute="top" secondItem="scu-uY-cif" secondAttribute="bottom" constant="8" symbolic="YES" id="HkC-ZZ-OiV"/>
+                                                <constraint firstItem="4ez-Be-aVk" firstAttribute="centerX" secondItem="1ai-ur-ZHi" secondAttribute="centerX" id="Qmf-5q-uYC"/>
+                                                <constraint firstItem="scu-uY-cif" firstAttribute="trailing" secondItem="1ai-ur-ZHi" secondAttribute="trailingMargin" id="THA-W1-dN8"/>
+                                                <constraint firstItem="scu-uY-cif" firstAttribute="top" secondItem="1ai-ur-ZHi" secondAttribute="topMargin" id="Wod-On-4wr"/>
+                                                <constraint firstItem="2Es-rU-HAA" firstAttribute="trailing" secondItem="1ai-ur-ZHi" secondAttribute="trailingMargin" id="cFc-e7-XMR"/>
+                                                <constraint firstItem="4ez-Be-aVk" firstAttribute="top" secondItem="2Es-rU-HAA" secondAttribute="bottom" id="hSo-SL-ljv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.98823529480000005" green="0.92941176889999999" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="feedImageView" destination="4ez-Be-aVk" id="C6Y-LU-VcS"/>
+                                            <outlet property="userEmailLabel" destination="2Es-rU-HAA" id="e9Y-rN-no9"/>
+                                            <outlet property="userNameLabel" destination="scu-uY-cif" id="GOp-qf-4JF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yqK-Om-y4b"/>
@@ -376,7 +424,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Feed" image="f.circle.fill" catalog="system" id="l7T-qd-duO"/>
                     <connections>
-                        <outlet property="tableView" destination="Csm-NZ-TL0" id="XkZ-6O-xSj"/>
+                        <outlet property="tableView" destination="Csm-NZ-TL0" id="Upc-ZU-rKK"/>
                         <segue destination="sWe-kn-Roi" kind="show" identifier="feedToSnap" id="nEe-Nw-SCQ"/>
                     </connections>
                 </viewController>
@@ -587,8 +635,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XdC-G6-zMh"/>
-        <segue reference="5sy-H5-xiC"/>
+        <segue reference="m0N-kF-oFl"/>
+        <segue reference="KC1-1N-5T2"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="150" height="150"/>
@@ -601,9 +649,6 @@
         <image name="user_icon" width="52" height="64"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
