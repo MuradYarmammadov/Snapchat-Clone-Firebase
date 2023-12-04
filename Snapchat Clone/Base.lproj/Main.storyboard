@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -440,19 +441,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="886"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-up-wHY">
-                                <rect key="frame" x="20" y="70" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-up-wHY">
+                                <rect key="frame" x="0.0" y="20" width="414" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="BeO-0Z-fz1">
+                                <rect key="frame" x="82" y="318" width="250" height="250"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="NL1-Ir-0LJ"/>
+                                    <constraint firstAttribute="width" constant="250" id="WwA-gE-QvX"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="74W-1Z-2K6">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionCell" id="cYA-tm-eyf" customClass="SnapCollectionViewCell" customModule="Snapchat_Clone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5V6-r2-wZ5">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ghl-Q2-mFG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="Q9F-U4-7CI"/>
+                                                        <constraint firstAttribute="height" constant="250" id="VW3-Qa-ujP"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ghl-Q2-mFG" firstAttribute="centerX" secondItem="5V6-r2-wZ5" secondAttribute="centerX" id="F70-yb-HAi"/>
+                                                <constraint firstItem="ghl-Q2-mFG" firstAttribute="centerY" secondItem="5V6-r2-wZ5" secondAttribute="centerY" id="OQ8-No-XAX"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="250" height="250"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="ghl-Q2-mFG" id="Dw6-hn-bCx"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="sWe-kn-Roi" id="OJp-4T-wAY"/>
+                                    <outlet property="delegate" destination="sWe-kn-Roi" id="8Fn-ko-yz5"/>
+                                </connections>
+                            </collectionView>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="0L7-lT-px0">
+                                <rect key="frame" x="82" y="576" width="250" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="C5s-iY-G8j"/>
+                                    <constraint firstAttribute="width" constant="250" id="J8g-EX-Vjg"/>
+                                </constraints>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ysB-6X-Ecu"/>
                         <color key="backgroundColor" red="0.98823529480000005" green="0.92941176889999999" blue="0.30980393290000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="D9p-up-wHY" firstAttribute="centerX" secondItem="auy-5v-Baz" secondAttribute="centerX" id="EDo-Zi-Upq"/>
+                            <constraint firstItem="D9p-up-wHY" firstAttribute="trailing" secondItem="ysB-6X-Ecu" secondAttribute="trailing" id="FJs-fY-8fM"/>
+                            <constraint firstItem="0L7-lT-px0" firstAttribute="top" secondItem="BeO-0Z-fz1" secondAttribute="bottom" constant="8" symbolic="YES" id="OiF-NO-nTk"/>
+                            <constraint firstItem="0L7-lT-px0" firstAttribute="centerX" secondItem="auy-5v-Baz" secondAttribute="centerX" id="V6q-KS-deI"/>
+                            <constraint firstItem="BeO-0Z-fz1" firstAttribute="centerX" secondItem="auy-5v-Baz" secondAttribute="centerX" id="YSI-6U-NBO"/>
+                            <constraint firstItem="D9p-up-wHY" firstAttribute="top" secondItem="ysB-6X-Ecu" secondAttribute="top" constant="20" id="fq5-Na-m3T"/>
+                            <constraint firstItem="D9p-up-wHY" firstAttribute="leading" secondItem="ysB-6X-Ecu" secondAttribute="leading" id="lLL-br-QEX"/>
+                            <constraint firstItem="BeO-0Z-fz1" firstAttribute="centerY" secondItem="auy-5v-Baz" secondAttribute="centerY" id="xUC-cR-On3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pod-p2-dso"/>
                     <connections>
+                        <outlet property="collectionView" destination="BeO-0Z-fz1" id="URT-DB-PKm"/>
+                        <outlet property="pageControl" destination="0L7-lT-px0" id="U3a-st-F7X"/>
                         <outlet property="timeLabel" destination="D9p-up-wHY" id="WW2-hk-cp5"/>
                     </connections>
                 </viewController>
@@ -649,6 +713,9 @@
         <image name="user_icon" width="52" height="64"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

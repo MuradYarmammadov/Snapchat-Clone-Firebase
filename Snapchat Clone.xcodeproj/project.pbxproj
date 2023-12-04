@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C8E06E0A87B1E2F6D5CCA7B3 /* Pods_Snapchat_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4D0852479DA7DC0ECC9853B /* Pods_Snapchat_Clone.framework */; };
+		FA13491B2B1DFF9D00E89711 /* SnapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA13491A2B1DFF9D00E89711 /* SnapCollectionViewCell.swift */; };
 		FA703C082B11422400659E04 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703C072B11422400659E04 /* SnapViewController.swift */; };
 		FA703C0C2B1155CC00659E04 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703C0B2B1155CC00659E04 /* UserSingleton.swift */; };
 		FA703C0E2B162F8900659E04 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA703C0D2B162F8900659E04 /* FeedCell.swift */; };
@@ -31,6 +32,7 @@
 		22DE1E4E6ED9D07727EFD669 /* Pods-Snapchat Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat Clone.release.xcconfig"; path = "Target Support Files/Pods-Snapchat Clone/Pods-Snapchat Clone.release.xcconfig"; sourceTree = "<group>"; };
 		BEB98047CE6A8FF2648D1134 /* Pods-Snapchat Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Snapchat Clone.debug.xcconfig"; path = "Target Support Files/Pods-Snapchat Clone/Pods-Snapchat Clone.debug.xcconfig"; sourceTree = "<group>"; };
 		C4D0852479DA7DC0ECC9853B /* Pods_Snapchat_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Snapchat_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA13491A2B1DFF9D00E89711 /* SnapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA703C072B11422400659E04 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		FA703C0B2B1155CC00659E04 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		FA703C0D2B162F8900659E04 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				FAA09C652B1107AF0006129D /* UploadViewController.swift */,
 				FAA09C672B1107B70006129D /* SettingsViewController.swift */,
 				FA703C072B11422400659E04 /* SnapViewController.swift */,
+				FA13491A2B1DFF9D00E89711 /* SnapCollectionViewCell.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA13491B2B1DFF9D00E89711 /* SnapCollectionViewCell.swift in Sources */,
 				FAD3B2CB2B10D197003FCCEE /* LoginViewController.swift in Sources */,
 				FAA09C662B1107AF0006129D /* UploadViewController.swift in Sources */,
 				FAD3B2C72B10D197003FCCEE /* AppDelegate.swift in Sources */,

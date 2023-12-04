@@ -21,7 +21,6 @@ class FeedViewController: UIViewController {
     let instance = UserSingleton.sharedUserInfo
     var snapArray = [Snap]()
     var chosenSnap : Snap?
-    var timeLeft : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,11 +46,11 @@ class FeedViewController: UIViewController {
                                         if let difference = Calendar.current.dateComponents([.hour], from: date.dateValue(), to: Date()).hour {
                                             if difference >= 24 {
                                                 self.fireStore.collection("Snaps").document(documentId).delete()
+                                            } else {
+                                                let snap = Snap(userName: userName, userEmail: userEmail, imageUrlArray: imageUrlArray, date: date.dateValue(), timeDifference: 24 - difference)
+                                                self.snapArray.append(snap)
                                             }
-                                            self.timeLeft = 24 - difference
                                         }
-                                        let snap = Snap(userName: userName, userEmail: userEmail, imageUrlArray: imageUrlArray, date: date.dateValue())
-                                        self.snapArray.append(snap)
                                     }
                                 }
                             }
@@ -89,7 +88,6 @@ class FeedViewController: UIViewController {
         if segue.identifier == "feedToSnap" {
             let destination = segue.destination as! SnapViewController
             destination.selectedSnap = chosenSnap
-            destination.timeLeft = self.timeLeft
         }
     }
 
@@ -104,7 +102,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FeedCell
         cell.userEmailLabel.text = snapArray[indexPath.row].userEmail
         cell.userNameLabel.text = snapArray[indexPath.row].userName
-        cell.feedImageView.sd_setImage(with: URL(string: snapArray[indexPath.row].imageUrlArray[0]))
+        cell.feedImageView.sd_setImage(with: URL(string: snapArray[indexPath.row].imageUrlArray.last!))
         return cell
     }
     
